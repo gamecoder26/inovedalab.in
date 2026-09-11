@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InovedaLab — Build. Innovate. Scale.</title>
+<meta name="description" content="InovedaLab builds modern web, mobile, AI, cloud and custom software solutions for ambitious businesses.">
+<style>
+:root{
+  --bg:#030712; --panel:#07111f; --panel2:#0a1627; --line:rgba(148,163,184,.16);
+  --text:#f8fafc; --muted:#94a3b8; --blue:#1683ff; --violet:#7557ff;
+  --cyan:#22d3ee; --green:#4ade80; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 75% 12%,rgba(37,99,235,.16),transparent 30%),
+radial-gradient(circle at 20% 65%,rgba(124,58,237,.10),transparent 25%),var(--bg);
+color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(3,7,18,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px}
+.logo-mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:23px;font-weight:900;
+background:linear-gradient(135deg,#0ea5e9,#7c3aed);box-shadow:0 0 28px rgba(37,99,235,.3)}
+.logo small{display:block;color:#7f8ea3;font-size:9px;letter-spacing:1.5px;font-weight:600;margin-top:-3px}
+.navlinks{display:flex;gap:29px;color:#cbd5e1;font-size:13px}
+.navlinks a{transition:.2s}.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-size:13px;font-weight:700;transition:.25s}
+.btn-primary{background:linear-gradient(100deg,var(--blue),var(--violet));box-shadow:0 12px 35px rgba(37,99,235,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(37,99,235,.4)}
+.btn-outline{border:1px solid #334155;background:rgba(255,255,255,.02)}
+.btn-outline:hover{border-color:#64748b;background:rgba(255,255,255,.05)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+
+.hero{min-height:790px;padding-top:150px;display:grid;grid-template-columns:1.02fr .98fr;gap:45px;align-items:center;position:relative}
+.eyebrow{font-size:11px;color:#8bbcff;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:17px}
+h1{font-size:clamp(48px,6vw,78px);line-height:.98;letter-spacing:-4px;max-width:700px}
+.gradient{background:linear-gradient(90deg,#fff,#4ea3ff 45%,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:18px;color:#b5c0cf;max-width:600px;margin:25px 0 30px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.trust{margin-top:32px;display:flex;align-items:center;gap:13px;color:#8290a3;font-size:12px}
+.avatars{display:flex}.avatar{width:31px;height:31px;border-radius:50%;border:2px solid var(--bg);margin-left:-7px;background:linear-gradient(135deg,#38bdf8,#8b5cf6)}
+.avatar:first-child{margin-left:0}
+
+.visual{height:540px;position:relative;display:grid;place-items:center}
+.orbit{width:420px;height:420px;border-radius:50%;border:1px solid rgba(59,130,246,.2);box-shadow:0 0 90px rgba(37,99,235,.14) inset;position:relative}
+.orbit:before,.orbit:after{content:"";position:absolute;inset:42px;border-radius:50%;border:1px solid rgba(139,92,246,.22)}
+.orbit:after{inset:95px;border-color:rgba(34,211,238,.22)}
+.core{position:absolute;inset:0;margin:auto;width:145px;height:145px;border-radius:38px;display:grid;place-items:center;
+background:linear-gradient(145deg,#0b2441,#12102e);border:1px solid rgba(96,165,250,.4);box-shadow:0 0 70px rgba(37,99,235,.3)}
+.core span{font-size:46px;background:linear-gradient(135deg,#22d3ee,#8b5cf6);-webkit-background-clip:text;color:transparent;font-weight:900}
+.float-card{position:absolute;background:rgba(7,17,31,.86);border:1px solid rgba(148,163,184,.22);backdrop-filter:blur(15px);
+border-radius:18px;padding:17px;box-shadow:0 20px 60px rgba(0,0,0,.3);width:220px}
+.float-card strong{display:block;font-size:14px}.float-card p{font-size:11px;color:var(--muted);margin-top:4px}
+.fc1{top:55px;left:0}.fc2{right:0;bottom:75px}.fc3{left:70px;bottom:25px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#22d3ee;box-shadow:0 0 12px #22d3ee;margin-right:7px}
+
+section{padding:90px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:32px;gap:20px}
+.kicker{font-size:11px;color:#6ea8ff;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+h2{font-size:38px;letter-spacing:-1.5px;line-height:1.1}
+.section-head p{color:var(--muted);font-size:13px;max-width:440px;text-align:right}
+
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{padding:25px;background:linear-gradient(145deg,rgba(10,22,39,.95),rgba(5,12,23,.8));border:1px solid var(--line);border-radius:16px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(96,165,250,.38);box-shadow:0 20px 45px rgba(0,0,0,.25)}
+.icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(37,99,235,.12);color:#38bdf8;font-size:20px;margin-bottom:20px}
+.card h3{font-size:17px;margin-bottom:7px}.card p{color:var(--muted);font-size:13px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.015)}
+.stat{padding:28px;border-right:1px solid var(--line)}.stat:last-child{border:0}
+.stat b{font-size:32px}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+.why{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
+.why-box{min-height:380px;border-radius:22px;border:1px solid var(--line);padding:35px;display:flex;flex-direction:column;justify-content:end;
+background:linear-gradient(135deg,rgba(30,64,175,.22),rgba(15,23,42,.7)),radial-gradient(circle at 75% 25%,#173b70,transparent 35%)}
+.why-box h2{font-size:43px}.why-box p{color:#aab7c8;max-width:400px;margin-top:14px}
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:27px}.reason{display:flex;gap:14px}.reason .icon{flex:none;margin:0;width:39px;height:39px}.reason h3{font-size:14px}.reason p{font-size:12px;color:var(--muted);margin-top:3px}
+
+.techs{display:flex;flex-wrap:wrap;gap:10px}.tech{padding:12px 17px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.025);font-size:13px;color:#dbe5f1}
+
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{overflow:hidden;border-radius:17px;border:1px solid var(--line);background:#07111f}
+.project-img{height:190px;background:linear-gradient(135deg,#0e3150,#111936);display:grid;place-items:center;font-size:48px}
+.project-img img{width:100%;height:100%;object-fit:cover;display:block}
+.project-body{padding:20px}.project-body h3{font-size:17px}.project-body p{font-size:12px;color:var(--muted);margin:6px 0 13px}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{font-size:10px;padding:5px 8px;border-radius:999px;background:#101d30;color:#a8b7ca}
+
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.step{position:relative;padding:16px}.num{font-size:24px;color:#4ea3ff;font-weight:800}.step h3{font-size:13px;margin:8px 0 3px}.step p{font-size:10px;color:var(--muted)}
+
+.industries{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}.industry{text-align:center;color:#b6c1cf;font-size:12px}.industry i{display:grid;place-items:center;width:56px;height:56px;border:1px solid var(--line);border-radius:50%;margin:auto auto 9px;font-style:normal;font-size:20px}
+
+.cta{padding:80px 0;background:radial-gradient(circle at 20% 50%,rgba(37,99,235,.25),transparent 30%),radial-gradient(circle at 80% 50%,rgba(124,58,237,.22),transparent 30%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font-size:46px}.cta p{color:var(--muted);margin-top:8px}
+
+footer{padding:55px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:35px}.footer-brand p{font-size:12px;color:var(--muted);max-width:330px;margin-top:14px}.footer h4{font-size:13px;margin-bottom:14px}.footer a{display:block;color:#8f9daf;font-size:12px;margin:7px 0}.footer a:hover{color:#fff}
+.newsletter{display:flex;margin-top:12px}.newsletter input{width:100%;background:#081322;border:1px solid var(--line);padding:11px 12px;color:#fff;outline:0;border-radius:9px 0 0 9px}.newsletter button{border:0;width:46px;border-radius:0 9px 9px 0;background:linear-gradient(100deg,var(--blue),var(--violet));color:white}
+.copyright{border-top:1px solid var(--line);margin-top:45px;padding-top:20px;color:#667487;font-size:11px;display:flex;justify-content:space-between}
+
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+
+@media(max-width:850px){
+ .navlinks,.nav>.btn{display:none}.menu{display:block}.hero{grid-template-columns:1fr;padding-top:125px;min-height:auto;padding-bottom:70px}.visual{height:470px}
+ .grid6,.projects{grid-template-columns:repeat(2,1fr)}.why{grid-template-columns:1fr}.steps{grid-template-columns:repeat(3,1fr)}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{text-align:left;margin-top:10px}
+}
+@media(max-width:560px){
+ h1{font-size:48px;letter-spacing:-2.5px}.hero-copy{font-size:15px}.visual{transform:scale(.8);margin:-45px 0}
+ .grid6,.projects,.reasons{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .steps{grid-template-columns:repeat(2,1fr)}.industries{justify-content:center}.cta-inner{display:block}.cta h2{font-size:36px}.cta .btn{margin-top:20px}
+ .footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">
+      <span class="logo-mark">N</span>
+      <span>InovedaLab<small>INNOVATE • BUILD • GROW</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+      <a href="#work">Our Work</a><a href="#industries">Industries</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Let's Talk →</a>
+    <button class="menu" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="container hero" id="home">
+  <div class="reveal">
+    <div class="eyebrow">Technology for a better tomorrow</div>
+    <h1>Build. <span class="gradient">Innovate.</span> Scale.</h1>
+    <p class="hero-copy">Transforming ideas into powerful digital products with modern technology. From websites and mobile apps to AI-powered products and cloud infrastructure.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get a Free Consultation →</a>
+      <a class="btn btn-outline" href="#services">Explore Services</a>
+    </div>
+    <div class="trust">
+      <div class="avatars"><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span></div>
+      Trusted by startups, SMEs and ambitious businesses.
+    </div>
+  </div>
+  <div class="visual reveal">
+    <div class="orbit"><div class="core"><span>NL</span></div></div>
+    <div class="float-card fc1"><strong><span class="dot"></span>Digital Engineering</strong><p>Web • Mobile • APIs • Product Development</p></div>
+    <div class="float-card fc2"><strong>AI & Automation</strong><p>RAG • AI Agents • Intelligent Workflows</p></div>
+    <div class="float-card fc3"><strong>☁ Cloud Ready</strong><p>AWS • Docker • DevOps • Scalable Systems</p></div>
+  </div>
+</section>
+
+<section id="services">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">What we do</div><h2>Our Services</h2></div><p>End-to-end technology solutions designed for modern businesses.</p></div>
+  <div class="grid6">
+    <div class="card reveal"><div class="icon">&lt;/&gt;</div><h3>Web Development</h3><p>Fast, scalable and high-performance websites and web applications.</p></div>
+    <div class="card reveal"><div class="icon">▣</div><h3>Mobile App Development</h3><p>Modern iOS, Android and cross-platform mobile experiences.</p></div>
+    <div class="card reveal"><div class="icon">✦</div><h3>AI & Machine Learning</h3><p>AI-powered products, automation, RAG systems and intelligent workflows.</p></div>
+    <div class="card reveal"><div class="icon">☁</div><h3>Cloud & DevOps</h3><p>Secure, reliable and cost-efficient cloud infrastructure.</p></div>
+    <div class="card reveal"><div class="icon">⚙</div><h3>Custom Software</h3><p>Tailored software engineered around your business requirements.</p></div>
+    <div class="card reveal"><div class="icon">✎</div><h3>UI/UX Design</h3><p>Clean, intuitive and conversion-focused digital experiences.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="stats reveal">
+    <div class="stat"><b>100+</b><span>Projects Delivered</span></div>
+    <div class="stat"><b>50+</b><span>Happy Clients</span></div>
+    <div class="stat"><b>5+</b><span>Countries Served</span></div>
+    <div class="stat"><b>99%</b><span>Client Satisfaction</span></div>
+  </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container why">
+  <div class="why-box reveal"><div class="kicker">Why InovedaLab?</div><h2>We don't just build software.</h2><p>We build technology partnerships that help businesses innovate, launch faster and grow with confidence.</p></div>
+  <div class="reasons">
+    <div class="reason reveal"><div class="icon">✦</div><div><h3>Innovation First</h3><p>We use modern technologies to solve real business problems.</p></div></div>
+    <div class="reason reveal"><div class="icon">⚡</div><div><h3>Fast & Scalable</h3><p>Agile development designed for speed without sacrificing quality.</p></div></div>
+    <div class="reason reveal"><div class="icon">✓</div><div><h3>Secure by Design</h3><p>Security and reliability are considered at every layer.</p></div></div>
+    <div class="reason reveal"><div class="icon">◎</div><div><h3>Global Delivery</h3><p>Technology teams that can work across locations and time zones.</p></div></div>
+    <div class="reason reveal"><div class="icon">♧</div><div><h3>Long-Term Partnership</h3><p>Your success becomes the foundation for our next release.</p></div></div>
+    <div class="reason reveal"><div class="icon">≡</div><div><h3>Transparent Process</h3><p>Clear communication and visibility throughout every stage.</p></div></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">Our stack</div><h2>Technologies We Work With</h2></div><p>Modern tools. Powerful solutions.</p></div>
+  <div class="techs reveal">
+    <span class="tech">⚛ React</span><span class="tech">Next.js</span><span class="tech">Node.js</span><span class="tech">Python</span><span class="tech">Java</span><span class="tech">AWS</span><span class="tech">Docker</span><span class="tech">Kubernetes</span><span class="tech">PostgreSQL</span><span class="tech">MongoDB</span><span class="tech">OpenAI</span><span class="tech">GitHub</span>
+  </div>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">Selected work</div><h2>Featured Projects</h2></div><p>Real products. Real business impact.</p></div>
+  <div class="projects">
+    <article class="project reveal"><div class="project-img"><img src="images/edusmart.png" style="height:200px!important;" alt="EduSmart school project"></div><div class="project-body"><h3>EduSmart</h3><p>A modern school and e-learning platform designed for students and educators.</p><div class="tags"><span class="tag">Web</span><span class="tag">Mobile</span><span class="tag">AWS</span></div></div></article>
+    <article class="project reveal"><div class="project-img"><img src="images/meet2doctor.png" alt="Meet2Doctor doctor appointment project"></div><div class="project-body"><h3>Meet2Doctor</h3><p>A doctor appointment and online healthcare consultation platform.</p><div class="tags"><span class="tag">Web</span><span class="tag">AI</span><span class="tag">Cloud</span></div></div></article>
+    <article class="project reveal"><div class="project-img"><img src="images/retailpro.png" alt="RetailPro retail management project"></div><div class="project-body"><h3>RetailPro</h3><p>Scalable e-commerce experience with modern payments and analytics.</p><div class="tags"><span class="tag">Next.js</span><span class="tag">Payment</span><span class="tag">DevOps</span></div></div></article>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">Our process</div><h2>How We Work</h2></div><p>A simple, transparent and effective process.</p></div>
+  <div class="steps">
+    <div class="step reveal"><div class="num">01</div><h3>Discover</h3><p>Understand your goals</p></div>
+    <div class="step reveal"><div class="num">02</div><h3>Design</h3><p>Plan the best solution</p></div>
+    <div class="step reveal"><div class="num">03</div><h3>Develop</h3><p>Build with precision</p></div>
+    <div class="step reveal"><div class="num">04</div><h3>Test</h3><p>Ensure quality</p></div>
+    <div class="step reveal"><div class="num">05</div><h3>Deploy</h3><p>Launch confidently</p></div>
+    <div class="step reveal"><div class="num">06</div><h3>Scale</h3><p>Grow together</p></div>
+  </div>
+</div>
+</section>
+
+<section id="industries">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">Where we help</div><h2>Industries We Serve</h2></div><p>Technology solutions adapted to every industry.</p></div>
+  <div class="industries reveal">
+    <div class="industry"><i>♡</i>Healthcare</div><div class="industry"><i>⌂</i>Education</div><div class="industry"><i>▱</i>E-commerce</div><div class="industry"><i>₹</i>FinTech</div><div class="industry"><i>⌂</i>Real Estate</div><div class="industry"><i>♨</i>Hospitality</div><div class="industry"><i>⚙</i>Manufacturing</div><div class="industry"><i>↗</i>Startups</div><div class="industry"><i>▦</i>Enterprises</div>
+  </div>
+</div>
+</section>
+
+<div class="cta" id="contact">
+<div class="container cta-inner">
+  <div>
+  <div class="kicker">Let's build together</div>
+  <h2>Have an idea? Let's make it real.</h2>
+  <p>Tell us what you're building and let's turn your vision into a powerful digital product.</p>
+  <p style="margin-top:16px;color:var(--muted);font-size:14px;">
+    <strong style="color:#dbe5f1;">INDIA NOIDA CORP OFFICE:</strong><br>
+    C-50, Sector 2, Noida 201301 (India)<br>
+    <a href="tel:+916393448329" style="color:#dbe5f1;">Mobile: +91 63934 48329</a>
+  </p>
+</div>
+  <a class="btn btn-primary" href="mailto:hello@inovedalab.in">Get a Free Consultation →</a>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="logo" href="#"><span class="logo-mark">N</span><span>InovedaLab<small>INNOVATE • BUILD • GROW</small></span></a><p>InovedaLab is a technology company helping businesses innovate, build and grow with modern digital solutions.</p></div>
+    <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#work">Our Work</a><a href="#contact">Contact</a></div>
+    <div><h4>Services</h4><a href="#services">Web Development</a><a href="#services">Mobile Apps</a><a href="#services">AI & ML</a><a href="#services">Cloud & DevOps</a><a href="#services">Custom Software</a></div>
+    <div>
+  <h4>Contact</h4>
+  <div style="color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:10px;">
+    <strong style="color:#dbe5f1;">INDIA NOIDA CORP OFFICE:</strong><br>
+    C-50, Sector 2,<br>
+    Noida 201301 (India)
+  </div>
+  <a href="tel:+916393448329">Mobile: +91 63934 48329</a>
+  <a href="mailto:hello@inovedalab.in">hello@inovedalab.in</a>
+  <a href="#contact">Start a Project →</a>
+  <div class="newsletter"><input placeholder="Your email"><button>→</button></div>
+</div>
+  </div>
+  <div class="copyright"><span>© 2026 InovedaLab.in. All rights reserved.</span><span>Innovate Today. A Better Tomorrow.</span></div>
+</div>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.querySelector('.menu').addEventListener('click',()=>{
+ const n=document.querySelector('.navlinks');
+ n.style.display=n.style.display==='flex'?'none':'flex';
+ n.style.position='absolute';n.style.top='76px';n.style.left='0';n.style.right='0';
+ n.style.padding='20px';n.style.background='#050b16';n.style.flexDirection='column';
+});
+</script>
+</body>
+</html>
